@@ -1,0 +1,51 @@
+% Johnson graph n=4 k=1 J(4,1)
+% Author: José Antonio Riaza Valverde
+% <https://github.com/jariazavalverde/graph-families>
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{automata}
+
+\begin{document}
+\begin{tikzpicture}[node distance=2.5cm, line width=0.4mm,
+	red/.style={circle,draw=red!100,fill=red!100,inner sep=0pt, minimum size=0.2cm},
+	gray/.style={circle,draw=black!30,fill=black!30,inner sep=0pt, minimum size=0.2cm}]
+	\node[state] (a) {
+		\begin{tikzpicture}[node distance=0.4cm, radius=1cm]
+			\node[red] (a1) {};
+			\node[gray] (a2) [left of=a1] {};
+			\node[gray] (a3) [below of=a2] {};
+			\node[gray] (a4) [right of=a3] {};
+    	\end{tikzpicture}	
+	};
+	\node[state] (b) [left of=a] {
+		\begin{tikzpicture}[node distance=0.4cm, radius=1cm]
+			\node[gray] (a1) {};
+			\node[red] (a2) [left of=a1] {};
+			\node[gray] (a3) [below of=a2] {};
+			\node[gray] (a4) [right of=a3] {};
+    	\end{tikzpicture}	
+	};
+	\node[state] (c) [below of=b] {
+		\begin{tikzpicture}[node distance=0.4cm, radius=1cm]
+			\node[gray] (a1) {};
+			\node[gray] (a2) [left of=a1] {};
+			\node[red] (a3) [below of=a2] {};
+			\node[gray] (a4) [right of=a3] {};
+    	\end{tikzpicture}	
+	};
+	\node[state] (d) [right of=c] {
+		\begin{tikzpicture}[node distance=0.4cm, radius=1cm]
+			\node[gray] (a1) {};
+			\node[gray] (a2) [left of=a1] {};
+			\node[gray] (a3) [below of=a2] {};
+			\node[red] (a4) [right of=a3] {};
+    	\end{tikzpicture}	
+	};
+	\path (a) edge node {} (b)
+	      (a) edge node {} (c)
+	      (a) edge node {} (d)
+	      (b) edge node {} (c)
+	      (b) edge node {} (d)
+	      (c) edge node {} (d);
+\end{tikzpicture}
+\end{document}
