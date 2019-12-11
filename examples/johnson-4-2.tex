@@ -1,0 +1,74 @@
+% Johnson graph n=4 k=2 J(4,2)
+% Author: José Antonio Riaza Valverde
+% <https://github.com/jariazavalverde/graph-families>
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{automata}
+
+\begin{document}
+\begin{tikzpicture}[node distance=2.5cm, line width=0.4mm,
+	red/.style={circle,draw=red!100,fill=red!100,inner sep=0pt, minimum size=0.2cm},
+	gray/.style={circle,draw=black!30,fill=black!30,inner sep=0pt, minimum size=0.2cm}]
+	\node[state] (a) at (0,-0.5) {
+		\begin{tikzpicture}[node distance=0.4cm, radius=1cm]
+			\node[red] (a1) {};
+			\node[red] (a2) [left of=a1] {};
+			\node[gray] (a3) [below of=a2] {};
+			\node[gray] (a4) [right of=a3] {};
+    	\end{tikzpicture}	
+	};
+	\node[state] (b) at (-1,1) {
+		\begin{tikzpicture}[node distance=0.4cm, radius=1cm]
+			\node[red] (a1) {};
+			\node[gray] (a2) [left of=a1] {};
+			\node[red] (a3) [below of=a2] {};
+			\node[gray] (a4) [right of=a3] {};
+    	\end{tikzpicture}	
+	};
+	\node[state] (c) at (1,1) {
+		\begin{tikzpicture}[node distance=0.4cm, radius=1cm]
+			\node[red] (a1) {};
+			\node[gray] (a2) [left of=a1] {};
+			\node[gray] (a3) [below of=a2] {};
+			\node[red] (a4) [right of=a3] {};
+    	\end{tikzpicture}	
+	};
+	\node[state] (d) at (-4,-2) {
+		\begin{tikzpicture}[node distance=0.4cm, radius=1cm]
+			\node[gray] (a1) {};
+			\node[red] (a2) [left of=a1] {};
+			\node[red] (a3) [below of=a2] {};
+			\node[gray] (a4) [right of=a3] {};
+    	\end{tikzpicture}	
+	};
+	\node[state] (e) at (4,-2) {
+		\begin{tikzpicture}[node distance=0.4cm, radius=1cm]
+			\node[gray] (a1) {};
+			\node[red] (a2) [left of=a1] {};
+			\node[gray] (a3) [below of=a2] {};
+			\node[red] (a4) [right of=a3] {};
+    	\end{tikzpicture}	
+	};
+	\node[state] (f) at (0,4) {
+		\begin{tikzpicture}[node distance=0.4cm, radius=1cm]
+			\node[gray] (a1) {};
+			\node[gray] (a2) [left of=a1] {};
+			\node[red] (a3) [below of=a2] {};
+			\node[red] (a4) [right of=a3] {};
+    	\end{tikzpicture}	
+	};
+	\path (a) edge node {} (b)
+	      (a) edge node {} (c)
+	      (b) edge node {} (c)
+	      (e) edge node {} (f)
+	      (d) edge node {} (f)
+	      (d) edge node {} (e)
+	      (a) edge node {} (d)
+	      (a) edge node {} (e)
+	      (b) edge node {} (d)
+	      (b) edge node {} (f)
+	      (c) edge node {} (e)
+	      (c) edge node {} (f);
+
+\end{tikzpicture}
+\end{document}
