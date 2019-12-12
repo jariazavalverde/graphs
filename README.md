@@ -1,6 +1,6 @@
 # Generator of graphs
 
-This repository contains tools and resources for generating and exporting diverse families of graphs (Johnson graphs, generalized Petersen graphs, ...) in several formats (DIMACS, LaTeX, etc).
+This repository contains tools and resources for generating, drawing and exporting diverse families of graphs (Johnson graphs, generalized Petersen graphs, ...) in several formats (DIMACS, LaTeX, etc).
 
 ## Usage
 
@@ -37,3 +37,7 @@ where:
 * `n` > `0`
 * `k` > `0`
 * `k` < `n/2`
+
+![Petersen(5, 1)](https://raw.githubusercontent.com/jariazavalverde/graphs/master/images/petersen-5-1.png "Petersen(5, 1)") | ![Petersen(5, 2)](https://raw.githubusercontent.com/jariazavalverde/graphs/master/images/petersen-5-2.png "Petersen(5, 2)") | ![Petersen(7, 1)](https://raw.githubusercontent.com/jariazavalverde/graphs/master/images/petersen-7-1.png "Petersen(7, 1)")
+:---: | :---: | :---:
+[**Petersen(5, 1)**](https://github.com/jariazavalverde/graphs/blob/master/tex/petersen.tex) | [**Petersen(5, 2)**](https://github.com/jariazavalverde/graphs/blob/master/tex/petersen.tex) | [**Petersen(7, 1)**](https://github.com/jariazavalverde/graphs/blob/master/tex/petersen.tex)
