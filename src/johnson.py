@@ -2,6 +2,8 @@ import numpy as np
 
 def johnson(n, k):
 	"""Returns the adjacency matrix of a johnson graph J(n,k)."""
+	if n < 1 or k < 1 or k > n:
+		return None
 	subsets = filter(lambda x: len(x) == k, powerset(range(n)))
 	size = len(subsets)
 	adjacency = np.zeros((size, size))
