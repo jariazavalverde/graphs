@@ -11,6 +11,7 @@ This repository contains tools and resources for generating, drawing and exporti
 ## Families
 
 * [Complete graphs](#complete-graphs)
+* [Friendship graphs](#friendship-graphs)
 * [Generalized Petersen graphs](#generalized-petersen-graphs)
 * [Johnson graphs](#johnson-graphs)
 
@@ -29,6 +30,22 @@ where:
 [**K(10)**](https://github.com/jariazavalverde/graphs/blob/master/tex/complete.tex) | [**K(11)**](https://github.com/jariazavalverde/graphs/blob/master/tex/complete.tex) | [**K(12)**](https://github.com/jariazavalverde/graphs/blob/master/tex/complete.tex)
 
 The file [complete.tex](https://github.com/jariazavalverde/graphs/blob/master/tex/complete.tex) defines a LaTeX command `\complete{n}` for drawing any complete graph with TikZ.
+
+### Friendship graphs
+
+A friendship graph `F(n)` is a planar undirected graph with `2n+1` vertices and `3n` edges, constructed by joining `n` copies of the cycle graph `C(3)` with a common vertex.
+
+```python
+./graphs.py friendship n
+```
+where:
+* `n` > `0`
+
+![F(3)](https://raw.githubusercontent.com/jariazavalverde/graphs/master/images/friendship-3.png "F(3)") | ![F(4)](https://raw.githubusercontent.com/jariazavalverde/graphs/master/images/friendship-4.png "F(4)") | ![F(5)](https://raw.githubusercontent.com/jariazavalverde/graphs/master/images/friendship-5.png "F(5)")
+:---: | :---: | :---:
+[**F(3)**](https://github.com/jariazavalverde/graphs/blob/master/tex/friendship.tex) | [**F(4)**](https://github.com/jariazavalverde/graphs/blob/master/tex/friendship.tex) | [**F(5)**](https://github.com/jariazavalverde/graphs/blob/master/tex/friendship.tex)
+
+The file [friendship.tex](https://github.com/jariazavalverde/graphs/blob/master/tex/friendship.tex) defines a LaTeX command `\friendship{n}` for drawing any friendship graph (for `n` > `1`) with TikZ.
 
 ### Generalized Petersen graphs
 

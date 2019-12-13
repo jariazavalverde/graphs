@@ -1,0 +1,31 @@
+% A friendship graph
+% Author: José Antonio Riaza Valverde
+% <https://github.com/jariazavalverde/graphs>
+\documentclass{article}
+\usepackage{tikz}
+
+\newcommand{\friendship}[1]{
+\begin{tikzpicture}[line width=0.4mm]
+	\node [circle, minimum size=6cm] (o) {};
+	\node[draw, minimum size=5mm, circle] (i) {};
+	\foreach \x [evaluate=\x as \y using int(\x*2)] in {0.5,1.0,...,#1} {
+		\node[draw, minimum size=5mm, circle] (\y) at (o.\x*360/#1) {};
+		\path (\y) edge node {} (i);
+	}
+	\foreach \i [
+		evaluate=\i as \x using int(\i*2),
+		evaluate=\i as \y using int(\i*2+1)
+	] in {0.5,1.5,...,#1} {
+		\path (\x) edge node {} (\y);
+	}
+\end{tikzpicture}
+}
+
+\begin{document}
+\friendship{2}
+\friendship{3}
+\friendship{4}
+\friendship{5}
+\friendship{6}
+\friendship{7}
+\end{document}

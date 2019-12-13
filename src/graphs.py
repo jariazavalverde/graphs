@@ -3,11 +3,13 @@
 import numpy as np
 from sys import argv
 from complete import complete
+from friendship import friendship
 from johnson import johnson
 from petersen import petersen
 
 graph_families = {
 	"complete": (complete, [("n", int)], "n > 0"),
+	"friendship": (friendship, [("n", int)], "n > 0"),
 	"johnson": (johnson, [("n", int), ("k", int)], "n > 0, k > 0, k < n"),
 	"petersen": (petersen, [("n", int), ("k", int)], "n > 0, k > 0, k < n/2")
 }
