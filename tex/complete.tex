@@ -1,0 +1,34 @@
+% A complete graph
+% Author: José Antonio Riaza Valverde
+% <https://github.com/jariazavalverde/graphs>
+\documentclass{article}
+\usepackage{tikz}
+
+\newcommand{\complete}[1]{
+\begin{tikzpicture}[line width=0.4mm]
+	\node [circle, minimum size=6cm] (o) {};
+	\foreach \x in {1,...,#1}{
+		\node[draw, minimum size=5mm, circle] (\x) at (o.\x*360/#1) {};
+	}
+	\foreach \i in {1,...,#1} {
+		\foreach \j in {1,...,#1} {
+			\path (\i) edge node {} (\j);
+		}
+	}
+\end{tikzpicture}
+}
+
+\begin{document}
+\complete{1}
+\complete{2}
+\complete{3}
+\complete{4}
+\complete{5}
+\complete{6}
+\complete{7}
+\complete{8}
+\complete{9}
+\complete{10}
+\complete{11}
+\complete{12}
+\end{document}
