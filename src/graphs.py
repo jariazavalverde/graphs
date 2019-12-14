@@ -6,12 +6,14 @@ from complete import complete
 from friendship import friendship
 from johnson import johnson
 from petersen import petersen
+from windmill import windmill
 
 graph_families = {
 	"complete": (complete, [("n", int)], "n > 0"),
 	"friendship": (friendship, [("n", int)], "n > 0"),
 	"johnson": (johnson, [("n", int), ("k", int)], "n > 0, k > 0, k < n"),
-	"petersen": (petersen, [("n", int), ("k", int)], "n > 0, k > 0, k < n/2")
+	"petersen": (petersen, [("n", int), ("k", int)], "n > 0, k > 0, k < n/2"),
+	"windmill": (windmill, [("k", int), ("n", int)], "k > 1, n > 1")
 }
 
 def main():
