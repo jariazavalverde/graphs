@@ -1,0 +1,35 @@
+% A windmill graph
+% Author: José Antonio Riaza Valverde
+% <https://github.com/jariazavalverde/graphs>
+\documentclass{article}
+\usepackage{tikz}
+
+\newcommand{\windmill}[2]{
+\begin{tikzpicture}[line width=0.4mm]
+	\node [circle, minimum size=8cm] (o) {};
+	\node[draw, minimum size=5mm, circle] (i) {};
+	\foreach \x in {1,...,#2} {
+		\node[circle, minimum size=3cm] (\x) at (o.\x*360/#2) {};
+		\foreach \y in {2,...,#1} {
+			\node[minimum size=5mm, circle] (\x-\y)
+				at (\x.\y*360/\number\numexpr#1-1\relax) {};
+			\path (i) edge [bend left] node {} (\x-\y);
+		}
+		\foreach \i in {2,...,#1} {
+			\foreach \j in {2,...,#1} {
+				\path (\x-\i) edge node {} (\x-\j);
+			}
+		}
+		\foreach \y in {2,...,#1} {
+			\node[draw, fill=black, minimum size=5mm, circle] (2-\x-\y)
+				at (\x.\y*360/\number\numexpr#1-1\relax) {};
+		}
+	}
+\end{tikzpicture}
+}
+
+\begin{document}
+\windmill{4}{6}
+
+\windmill{9}{5}
+\end{document}
