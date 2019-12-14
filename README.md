@@ -14,6 +14,7 @@ This repository contains tools and resources for generating, drawing and exporti
 * [Friendship graphs](#friendship-graphs)
 * [Generalized Petersen graphs](#generalized-petersen-graphs)
 * [Johnson graphs](#johnson-graphs)
+* [Windmill graphs](#windmill-graphs)
 
 ### Complete graphs
 
@@ -80,3 +81,20 @@ where:
 ![J(4, 1)](https://raw.githubusercontent.com/jariazavalverde/graphs/master/images/johnson-4-1.png "J(4, 1)") |![J(4, 2)](https://raw.githubusercontent.com/jariazavalverde/graphs/master/images/johnson-4-2.png "J(4, 2)")
 :---: | :---:
 [**J(4, 1)**](https://github.com/jariazavalverde/graphs/blob/master/tex/johnson-4-1.tex) | [**J(4, 2)**](https://github.com/jariazavalverde/graphs/blob/master/tex/johnson-4-2.tex)
+
+### Windmill graphs
+
+The windmill graph `Wd(k,n)` is an undirected graph constructed for `k > 1` and `n > 1` by joining `n` copies of the complete graph `K(k)` at a shared universal vertex. 
+
+```python
+./graphs.py windmill k n
+```
+where:
+* `k` > `1`
+* `n` > `1`
+
+![Wd(4, 6)](https://raw.githubusercontent.com/jariazavalverde/graphs/master/images/windmill-4-6.png "Wd(4, 6)") |![Wd(9, 5)](https://raw.githubusercontent.com/jariazavalverde/graphs/master/images/windmill-9-5.png "Wd(9, 5)")
+:---: | :---:
+[**Wd(4, 6)**](https://github.com/jariazavalverde/graphs/blob/master/tex/windmill.tex) | [**Wd(9, 5)**](https://github.com/jariazavalverde/graphs/blob/master/tex/windmill.tex)
+
+The file [windmill.tex](https://github.com/jariazavalverde/graphs/blob/master/tex/windmill.tex) defines a LaTeX command `\windmill{k}{n}` for drawing any windmill graph with TikZ.
