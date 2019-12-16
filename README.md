@@ -1,6 +1,6 @@
 # Generator of graphs
 
-This repository contains tools and resources for generating, drawing and exporting diverse families of graphs (Johnson graphs, generalized Petersen graphs, ...) in several formats (DIMACS, LaTeX, etc).
+This repository contains tools and resources for generating, drawing and exporting diverse families of graphs in several formats (DIMACS, LaTeX, etc).
 
 ## Usage
 
