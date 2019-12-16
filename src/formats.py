@@ -11,17 +11,29 @@ import numpy as np
 
 # FORMATS
 
+def format_c(adjacency):
+	"""Returns a string representation of the given graph in C format."""
+	size = adjacency.shape[0]
+	string = "int adjacency[%d][%d] = {\n" % (size, size)
+	for i in xrange(size):
+		string += "\t{" + ", ".join(map(str, np.array(adjacency[i], dtype=int).tolist())) + "}"
+		if i+1 < size:
+			string += ","
+		string += "\n"
+	string += "};"
+	return string
+
 def format_dimacs(adjacency):
 	"""Returns a string representation of the given graph in DIMACS format."""
 	string = ""
-	nodes = adjacency.shape[0]
+	size = adjacency.shape[0]
 	edges = 0
-	for i in xrange(nodes):
-		for j in xrange(i, nodes):
+	for i in xrange(size):
+		for j in xrange(i, size):
 			if adjacency[i][j]:
-				string += "e %d %d\n" % ((i+1), (j+1))
+				string += "\ne %d %d" % ((i+1), (j+1))
 				edges += 1
-	string = ("p edge %d %d\n" % (nodes, edges)) + string
+	string = ("p edge %d %d" % (size, edges)) + string
 	string = "c https://github.com/jariazavalverde/graphs\n" + string
 	return string
 
@@ -38,6 +50,7 @@ def format_numpy(adjacency):
 # HANDLING
 
 format_functions = {
+	"c": format_c,
 	"dimacs": format_dimacs,
 	"python": format_python,
 	"numpy": format_numpy
