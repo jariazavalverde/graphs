@@ -10,8 +10,8 @@ This repository contains tools and resources for generating, drawing and exporti
 
 Options:
 
-* `-o path` | `-output path`: exports the graph to a file. Default: stardard output.
-* `-f name` | `-format name`: selects the format of the graph: `c`, `dimacs`, `python`, `numpy`. Default: `numpy`.
+* `-o path` | `-output path`: exports the graph to a file. **Default: standard output.**
+* `-f name` | `-format name`: selects the format of the graph: `c`, `dimacs`, `haskell`, `javascript`, `prolog`, `python`, `numpy`. **Default: `numpy`.**
 
 ## Families
 

@@ -37,7 +37,7 @@ def format_dimacs(adjacency):
 	string = "c https://github.com/jariazavalverde/graphs\n" + string
 	return string
 
-def format_python(adjacency):
+def format_list(adjacency):
 	"""Returns a string representation of the given graph in Python format."""
 	return str(np.array(adjacency, dtype=int).tolist())
 
@@ -52,7 +52,10 @@ def format_numpy(adjacency):
 format_functions = {
 	"c": format_c,
 	"dimacs": format_dimacs,
-	"python": format_python,
+	"haskell": format_list,
+	"javascript": format_list,
+	"prolog": format_list,
+	"python": format_list,
 	"numpy": format_numpy
 }
 
