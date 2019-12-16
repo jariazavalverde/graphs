@@ -8,6 +8,11 @@ This repository contains tools and resources for generating, drawing and exporti
 ./graphs.py name parameters [options]
 ```
 
+Options:
+
+* `-o path` | `-output path`: exports the result graph to a file.
+* `-f name` | `-format name`: selects the format of the graph: `dimacs`, `python`, `numpy`.
+
 ## Families
 
 * [Complete graphs](#complete-graphs)
